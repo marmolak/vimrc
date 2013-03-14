@@ -1,5 +1,5 @@
 set nu
-set guifont=Monospace\ 14
+set guifont=Monospace\ Bold\ 14
 set background=dark
 
 if has("gui_running")
