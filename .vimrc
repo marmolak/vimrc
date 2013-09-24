@@ -1,3 +1,6 @@
+" ctags support
+set tags=./tags,tags;
+
 set nu
 set background=dark
 set nocompatible
