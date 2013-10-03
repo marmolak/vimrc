@@ -1,3 +1,6 @@
+" open mc in terminal
+map <F2> :!gnome-terminal -e mc<CR><CR>
+
 " ctags support
 set tags=./tags,tags;
 
