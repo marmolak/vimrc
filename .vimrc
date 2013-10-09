@@ -7,6 +7,8 @@ map <F10> :!gnome-terminal -e "less /tmp/last-tcms-submit"<CR><CR>
 
 " ctags support
 set tags=./tags,tags;
+" cscope support
+nmap <C-[> :cs find s <C-R>=expand("<cword>")<CR><CR>
 
 set nu
 set background=dark
