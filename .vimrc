@@ -1,14 +1,20 @@
+filetype plugin on
+filetype indent on
 " open mc in terminal
 map <F2> :!gnome-terminal -e mc<CR><CR>
 map <F3> :!gnome-terminal -e "git diff"<CR><CR>
 map <F4> :!gnome-terminal -e "git commit -a"<CR><CR>
-map <F9> :!gnome-terminal -e "/bin/bash -c 'echo ENTER; read; make tag && git push --tags && make bkradd && tcms-submit --all --coverage \| tee /tmp/last-tcms-submit; read'"<CR><CR>
+map <F9> :!gnome-terminal -e "/bin/bash -c 'echo ENTER; read; make tag && git push && git push --tags && make bkradd && tcms-submit --all --coverage \| tee /tmp/last-tcms-submit; read'"<CR><CR>
 map <F10> :!gnome-terminal -e "less /tmp/last-tcms-submit"<CR><CR>
 
 " ctags support
 set tags=./tags,tags;
 " cscope support
 nmap <C-[> :cs find s <C-R>=expand("<cword>")<CR><CR>
+
+
+set smartcase
+set showmatch
 
 set nu
 set background=dark
@@ -28,7 +34,7 @@ set expandtab         " Convert tabs to <tabstop> number of spaces
 set wildmenu
 set wildmode=list:longest
 set showmatch 
-set t_Co=25
+set t_Co=256
 syntax on
 
 
