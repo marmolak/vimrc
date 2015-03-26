@@ -1,8 +1,12 @@
 " Set nice colors when gui started
 if has("gui_running")
     colorscheme torte
-    " You need to escape spaces here
-    set guifont=Monospace\ Bold\ 14
+    if has("unix") && !has("mac")
+        " You need to escape spaces here (on unix)
+        set guifont=Monospace\ Bold\ 14
+    endif
+    " TODO: Make some setting for Mac OS
+
     highlight Pmenu guibg=black gui=bold guifg=yellow
     highlight PMenuSel   gui=bold guibg=DarkGreen guifg=honeydew2
 endif
