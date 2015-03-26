@@ -10,6 +10,13 @@ endif
 " Make search magic (all chars like | are magic now so no slash are needed
 nnoremap / /\v
 
+" Ignore case
+set ignorecase
+
+" Search for string.. NOW!
+set incsearch
+
+
 """ COMMON """
 " Enable line number
 set nu
