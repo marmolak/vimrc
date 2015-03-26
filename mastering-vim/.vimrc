@@ -18,6 +18,9 @@ if has("gui_running")
         " You need to escape spaces here (on unix)
         set guifont=Monospace\ Bold\ 14
     endif
+    if has("mac")
+        set guifont=Monospace:h18
+    endif
     " TODO: Make some setting for Mac OS
 
     highlight Pmenu guibg=black gui=bold guifg=yellow
@@ -25,7 +28,7 @@ if has("gui_running")
 endif
 
 """ SEARCHING """
-" Make search magic (all chars like | are magic now so no slash are needed
+" Make search magic (all chars like | are magic now so no slash are needed)
 nnoremap / /\v
 
 " Ignore case
