@@ -21,6 +21,11 @@ set ignorecase
 " Search for string.. NOW!
 set incsearch
 
+" When 'ignorecase' and 'smartcase' are both on, if a pattern contains an 
+" uppercase letter, it is case sensitive, otherwise, it is not. 
+" For example, /The would find only "The", while /the would find "the" or "The" etc.
+set smartcase
+
 " Map backspace key to cancel highlights
 nmap <silent> <BS> :nohlsearch<CR>
 
@@ -58,3 +63,6 @@ set t_Co=256
 
 " syntax highlight
 syntax on
+
+" make backspace work like most other apps
+set backspace=2
