@@ -74,3 +74,25 @@ set backspace=2
 " Better console search
 set wildmenu
 set wildmode=list:longest
+
+" cscope support
+if has("cscope") " check if vim is compiled with cscope support
+
+    " try to connect to database
+    if filereadable("cscope.out")
+        cs add cscope.out
+
+        " investigate if we have cs_cope connection
+        let saveA = @a
+        redir @a
+        silent! exec 'cs show'
+        redir END
+        let cs_conns = @a
+        let @a = saveA
+
+        if cs_conns !~? 'no cscope connections'
+            " Map my favorite key to cscope search - split window horizontaly
+            nmap <C-\> :scs find s <C-R>=expand("<cword>")<CR><CR>
+        endif " cs_conns check
+    endif " filereadable
+endif " has
