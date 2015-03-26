@@ -20,6 +20,10 @@ set incsearch
 " Map backspace key to cancel highlights
 nmap <silent> <BS> :nohlsearch<CR>
 
+""" COLORS """
+" Set background color when we are in terminal
+set background=dark
+
 """ COMMON """
 " Enable line number
 set nu
@@ -41,6 +45,9 @@ set nocompatible
 
 """ TWEAKS """
 set ttyfast           " smoother output, we're not on a 1200 dialup :)
+
+" Disable visual bell
+set novb 
 
 " Set 256 color teerminal
 set t_Co=256
