@@ -31,3 +31,9 @@ set nocompatible
 
 """ TWEAKS """
 set ttyfast           " smoother output, we're not on a 1200 dialup :)
+
+" Set 256 color teerminal
+set t_Co=256
+
+" syntax highlight
+syntax on
