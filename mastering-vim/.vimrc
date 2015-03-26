@@ -43,6 +43,9 @@ set incsearch
 " Map backspace key to cancel highlights
 nmap <silent> <BS> :nohlsearch<CR>
 
+" Highlight search
+set hlsearch
+
 """ COLORS """
 " Set background color when we are in terminal
 set background=dark
