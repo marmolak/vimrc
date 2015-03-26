@@ -56,6 +56,9 @@ set background=dark
 """ TWEAKS """
 set ttyfast           " smoother output, we're not on a 1200 dialup :)
 
+" don't mess directory with swap files
+set noswapfile
+
 " Disable visual bell
 set novb 
 
