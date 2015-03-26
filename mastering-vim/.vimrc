@@ -1,7 +1,8 @@
 " Set nice colors when gui started
 if has("gui_running")
     colorscheme torte
-    set guifont=Monaco:h18
+    " You need to escape spaces here
+    set guifont=Monospace\ Bold\ 14
     highlight Pmenu guibg=black gui=bold guifg=yellow
     highlight PMenuSel   gui=bold guibg=DarkGreen guifg=honeydew2
 endif
@@ -16,6 +17,8 @@ set ignorecase
 " Search for string.. NOW!
 set incsearch
 
+" Map backspace key to cancel highlights
+nmap <silent> <BS> :nohlsearch<CR>
 
 """ COMMON """
 " Enable line number
