@@ -67,3 +67,7 @@ syntax on
 
 " make backspace work like most other apps
 set backspace=2
+
+" Better console search
+set wildmenu
+set wildmode=list:longest
