@@ -75,7 +75,12 @@ set backspace=2
 set wildmenu
 set wildmode=list:longest
 
-" cscope support
+" show file name in titlebar
+set title
+" use 2 lines for the status bar (helps to have filename show)
+set laststatus=2 
+
+""" CSCOPE support """
 if has("cscope") " check if vim is compiled with cscope support
 
     " try to connect to database
