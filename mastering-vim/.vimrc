@@ -1,3 +1,10 @@
+" enable pathogen
+execute pathogen#infect()
+
+" enable plugins
+filetype plugin on
+filetype indent on
+
 """ COMMON """
 " Enable line numbers
 set nu
@@ -105,3 +112,21 @@ if has("cscope") " check if vim is compiled with cscope support
         endif " cs_conns check
     endif " filereadable
 endif " has
+
+""" PLUGINS """
+"" NERDTree ""
+
+" Automatically open NERDTree when not file name given
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Map ctrl+n to open nerdtree window
+map <C-n> :NERDTreeToggle<CR>
+
+" Fallback if we don't have NERDTree installed
+" Make browsing with vim better
+let g:netrw_liststyle=3 	" Use tree-mode as default view
+let g:netrw_browse_split=4 	" Open file in previous buffer
+let g:netrw_preview=1 		" preview window shown in a vertically split
+let g:netrw_keepdir=0
+
