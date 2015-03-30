@@ -30,7 +30,7 @@ if has("gui_running")
         set guifont=Monospace\ Bold\ 14
     endif
     if has("mac")
-        set guifont=Monospace:h18
+        set guifont=Monaco:h18
     endif
     " TODO: Make some setting for Mac OS
 
