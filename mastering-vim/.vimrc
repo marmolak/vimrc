@@ -13,6 +13,10 @@ set nocompatible
 
 " Set nice colors when gui started
 if has("gui_running")
+
+    " Open mc in new terminal
+    map <F2> :!mate-terminal -e mc<CR><CR>
+
     colorscheme torte
     if has("unix") && !has("mac")
         " You need to escape spaces here (on unix)
