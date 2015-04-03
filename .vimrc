@@ -130,3 +130,7 @@ let g:netrw_browse_split=4 	" Open file in previous buffer
 let g:netrw_preview=1 		" preview window shown in a vertically split
 let g:netrw_keepdir=0
 
+""" ENCODING """
+" Set vim/gvim font to utf
+" This also helps nerdtree to show fancy chars
+set encoding=utf-8
