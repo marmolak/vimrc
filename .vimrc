@@ -160,4 +160,3 @@ ino [ []<left>
 ino < <><left>
 ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
->>>>>>> lot of changes...
