@@ -1,9 +1,28 @@
 " enable pathogen
+
+set list
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 execute pathogen#infect()
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+set expandtab
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+let g:indentLine_enabled = 1
 
 " enable plugins
 filetype plugin on
 filetype indent on
+
 
 """ COMMON """
 " Enable line numbers
@@ -45,8 +64,8 @@ nnoremap / /\v
 " Ignore case
 set ignorecase
 
-" When 'ignorecase' and 'smartcase' are both on, if a pattern contains an 
-" uppercase letter, it is case sensitive, otherwise, it is not. 
+" When 'ignorecase' and 'smartcase' are both on, if a pattern contains an
+" uppercase letter, it is case sensitive, otherwise, it is not.
 " For example, /The would find only "The", while /the would find "the" or "The" etc.
 set smartcase
 
@@ -92,7 +111,8 @@ set title
 set laststatus=2 
 
 """ CSCOPE support """
-if has("cscope") " check if vim is compiled with cscope support
+""" check if vim is compiled with cscope support"""
+if has("cscope") 
 
     " try to connect to database
     if filereadable("cscope.out")
@@ -114,14 +134,14 @@ if has("cscope") " check if vim is compiled with cscope support
 endif " has
 
 """ PLUGINS """
-"" NERDTree ""
-
-" Automatically open NERDTree when not file name given
+""" NERDTREE """
+autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" Map ctrl+n to open nerdtree window
 map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " Fallback if we don't have NERDTree installed
 " Make browsing with vim better
@@ -130,7 +150,14 @@ let g:netrw_browse_split=4 	" Open file in previous buffer
 let g:netrw_preview=1 		" preview window shown in a vertically split
 let g:netrw_keepdir=0
 
-""" ENCODING """
-" Set vim/gvim font to utf
-" This also helps nerdtree to show fancy chars
-set encoding=utf-8
+highlight ExtraWhitespace ctermbg = red guibg = #FF0000
+autocmd   FileType cpp source ~/.vim/php.vim
+
+ino " ""<left>
+ino ' ''<left>
+ino ( ()<left>
+ino [ []<left>
+ino < <><left>
+ino { {}<left>
+ino {<CR> {<CR>}<ESC>O
+>>>>>>> lot of changes...
