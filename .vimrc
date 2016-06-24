@@ -90,7 +90,7 @@ set ttyfast           " smoother output, we're not on a 1200 dialup :)
 set noswapfile
 
 " Disable visual bell
-set novb 
+set novb
 
 " Set 256 color teerminal
 set t_Co=256
@@ -151,7 +151,7 @@ let g:netrw_preview=1 		" preview window shown in a vertically split
 let g:netrw_keepdir=0
 
 highlight ExtraWhitespace ctermbg = red guibg = #FF0000
-autocmd   FileType cpp source ~/.vim/php.vim
+autocmd   FileType php source ~/.vim/php.vim
 
 ino " ""<left>
 ino ' ''<left>
@@ -160,3 +160,5 @@ ino [ []<left>
 ino < <><left>
 ino { {}<left>
 ino {<CR> {<CR>}<ESC>O
+
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
