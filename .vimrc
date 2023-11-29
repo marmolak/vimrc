@@ -1,4 +1,6 @@
 filetype plugin on
+filetype plugin indent on
+syntax on
 
 """ SEARCHING """
 " Make search magic (all chars like | are magic now so no slash are needed)
